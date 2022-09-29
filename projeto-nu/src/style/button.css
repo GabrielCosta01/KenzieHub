@@ -1,0 +1,28 @@
+button {
+    width: 60%;
+    height: 3rem;
+  
+    color: white;
+  
+    font-size: 1rem;
+
+    cursor: pointer;
+  
+    border-radius: 12px;
+    border: none;
+  
+    background-color: #fd377e;
+}
+
+.buttonGrey {
+  width: 20%;
+  height: 5vh;
+  color: white;
+
+  font-size: 1rem;
+
+  border-radius: 12px;
+  border: none;
+
+  background-color: #fd377e;
+}
