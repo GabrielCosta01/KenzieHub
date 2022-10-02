@@ -42,9 +42,16 @@ function addList(formData) {
 
 function removeListItem(ClickedGame){
   const newList = listaItens.filter(item => item !== ClickedGame)
-  
   if(confirm('Deseja realmente remover?')){
     setListaItens(newList);
+  }
+}
+
+function removeListFiltro(ClickedGame){
+  const newList = listaItens.filter(item => item !== ClickedGame)
+  if(confirm('Deseja realmente remover?')){
+    setListaItens(newList);
+    setFiltered('');
   }
 }
 
@@ -67,7 +74,7 @@ function removeListItem(ClickedGame){
           </section>
 
           <section className='section_listagem'>
-            <Listagem listasItens={listaItens} removeListItem={removeListItem} filtered={filtered} setFiltered={setFiltered}  />
+            <Listagem listasItens={listaItens} removeListItem={removeListItem} removeListFiltro={removeListFiltro} filtered={filtered} setFiltered={setFiltered}  />
           </section>
 
           </main>

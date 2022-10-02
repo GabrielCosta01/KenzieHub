@@ -8,16 +8,17 @@ const Create = ({addList}) => {
     const [descricaoData, setdescricaoData] = useState('');
     const [valorData, setValorData] = useState();
     const [tipoData, setTipoData] = useState('Entrada');
+
     function handleSubmit(event){
         event.preventDefault();
         if(descricaoData.length && valorData.length){
             addList({
                 descricao: descricaoData,
-                valor: valorData,
+                valor: tipoData === 'Despesa' ? (-valorData) : (valorData),
                 tipo: tipoData,
-            });
+            })
             setdescricaoData('')
-            setValorData('')
+            setValorData('') 
         }
     }
 
@@ -33,7 +34,7 @@ const Create = ({addList}) => {
 
                 <div className="box_Create">
                     <span>Valor</span>
-                    <input type="number" placeholder="R$" onChange={(event) => setValorData(event.target.value) } value={valorData} />
+                    <input type="number" min={1} placeholder="R$" onChange={(event) => setValorData(event.target.value) } value={valorData} />
                 </div>
 
                 <div className="box_Create">
